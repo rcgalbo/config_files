@@ -5,24 +5,21 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # apps
-sudo apt-get install git nvim curl silversearcher-ag glances httpie jq
+sudo apt-get install git neovim curl gnome-tweak-tool
 
 # shell
 sudo apt-get install fish
-chsh -s /usr/bin/zsh # make zsh defaultinstall_setup.sh
+chsh -s /usr/bin/fish # make fish default
 
 # install omf
-curl -L https://get.oh-my.fish | fish
+curl -L https://get.oh-my.fish 
 
 # get spacedark colorscheme
 git clone https://github.com/liuchengxu/space-vim-dark
 mv space-vim-dark/colors ~/.config/nvim/
 rm -rf space-vim-dark
 
-# add flat remix
-
-
-# install flat remix icons
+# install flat remix
 sudo add-apt-repository ppa:daniruiz/flat-remix
 sudo apt-get update
 sudo apt-get install flat-remix-gnome flat-remix
