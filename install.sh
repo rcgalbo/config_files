@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # apps
-sudo apt-get install git neovim curl gconf2
+sudo apt-get install git tmux neovim curl gconf2
 
 # shell
 sudo apt-get install fish
@@ -32,7 +32,7 @@ cd ~/.config/fish
 git clone git://github.com/passcod/nvm-fish-wrapper.git nvm-wrapper
 
 # vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	
 # battery utilities
