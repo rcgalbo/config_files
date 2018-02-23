@@ -5,14 +5,14 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # apps
-sudo apt-get install git neovim curl gnome-tweak-tool
+sudo apt-get install git neovim curl gconf2
 
 # shell
 sudo apt-get install fish
 chsh -s /usr/bin/fish # make fish default
 
 # install omf
-curl -L https://get.oh-my.fish 
+curl -L https://get.oh-my.fish | fish
 
 # get spacedark colorscheme
 git clone https://github.com/liuchengxu/space-vim-dark
@@ -72,7 +72,4 @@ rm -rf Music/ Public/ Videos/ Pictures/ Templates/ examples.desktop
 mv Documents doc
 mv Downloads dnld
 mv Desktop dsk
-# change sys locations
-sed -i 's-XDG_DESKTOP_DIR="$HOME/"-XDG_DESKTOP_DIR="$HOME/dsk"-g' ~/.config/user-dirs.dirs
-sed -i 's-XDG_DOWNLOAD_DIR="$HOME/"-XDG_DOWNLOAD_DIR="$HOME/dnld"-g' ~/.config/user-dirs.dirs
-sed -i 's-XDG_DOCUMENTS_DIR="$HOME/"-XDG_DOCUMENTS_DIR="$HOME/doc"-g' ~/.config/user-dirs.dirs
+mv Pictures pic
