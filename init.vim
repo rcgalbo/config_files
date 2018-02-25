@@ -3,7 +3,7 @@
 set termguicolors
 color space-vim-dark
 let g:airline_theme='kolor'
-let g:space_vim_dark_background = 236
+let g:space_vim_dark_background = 237
 hi Comment cterm=italic
 " }}}
 " Misc {{{
@@ -42,7 +42,7 @@ set hlsearch            " highlight all matches
 " Folding {{{
 set foldmethod=indent   " fold based on indent level
 set foldnestmax=10      " max 10 depth
-set foldlevel=0
+set foldlevel=10
 nnoremap <space> za
 " }}}
 " Autogroups {{{
@@ -87,14 +87,22 @@ set pastetoggle=<F2>
 let mapleader=","
 noremap <Leader>s :w<CR>
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
+nnoremap <leader><space> :noh<CR>
+" quick edits
 nnoremap <leader>ev :tabnew $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader><space> :noh<CR>
+nnoremap <leader>et :tabnew ~/.tmux.conf<CR>
+nnoremap <leader>st :!tmux source-file ~/.tmux.conf<CR>
+" expand and close all folds
 nnoremap <leader>e zR
 nnoremap <leader>c zM
-map <leader>/ <leader>c<space>
+" NERD commenter
+map <leader>/ <leader>c<space> 
+" CTRL-P vim
 map <leader>f <C-p>
-map <leader>l :LivedownPreview<CR>
+" livedown preview
+map <leader>l :Liv_edownPreview<CR>
+" insert after before single characer
 nnoremap ,i i_<Esc>r
 nnoremap ,a a_<Esc>r
 " bindings for buffergator searching
@@ -115,6 +123,8 @@ if exists("$TMUX")
 end
 " }}}
 " {{{Plugin Settings
+" nerd commenter
+let NERDSpaceDelims=1
 " simply fold
 let g:SimpylFold_fold_docstring=0
 let g:SimpylFold_docstring_preview=1

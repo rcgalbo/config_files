@@ -23,5 +23,7 @@ alias ev="vi ~/.config/nvim/init.vim"
 alias eff="vi ~/.config/fish/config.fish"
 alias ef="vi ~/.config/fish/functions/"
 alias sf="source ~/.config/fish/config.fish"
+alias et="vi ~/.tmux.conf"
+alias st="tmux source ~/.tmux.conf"
 # }}}
 # vim:foldmethod=marker:foldlevel=0

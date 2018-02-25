@@ -1,4 +1,4 @@
-function bconf
+function bconf --description "backup configuration files to github"
   set backup_dir = ~/config_files/
   cp ~/.config/nvim/init.vim $backup_dir
   cp ~/.tmux.conf $backup_dir
