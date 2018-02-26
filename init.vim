@@ -137,6 +137,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let R_assign_map=";"
 " Markdown
 let g:markdown_fenced_languages = ['css', 'python', 'r', 'javascript', 'js=javascript', 'json=javascript', 'xml']
+let g:livedown_open = 1 
 " cosco settigns
 autocmd FileType javascript,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
