@@ -1,14 +1,11 @@
 # base aliases {{{
 alias vi="nvim"
-alias reload="source ~/.config/fish/conf.d"
+alias reload=". ~/.config/fish/conf.d/omf.fish"
 alias ll="ls -la"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias clean="git reset --hard HEAD; and git clean -df"
 alias cvs="rm ~/.local/share/nvim/swap/*" 
-# }}}
-# py/conda aliases{{{
-alias actv="conda activate"
 # }}}
 # {{{ tmux aliases
 alias tks="tmux kill-session"
@@ -26,4 +23,10 @@ alias sf=". ~/.config/fish/config.fish"
 alias et="vi ~/.tmux.conf"
 alias st="tmux source ~/.tmux.conf"
 # }}}
+# exports {{{
+set -gx EDITOR "nvim"
+set -gx RSTUDIO_WHICH_R /usr/binset 
+set -gx PATH $PATH ~/.config/fish/nvm-wrapper/
+set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin/
+#}}}
 # vim:foldmethod=marker:foldlevel=0

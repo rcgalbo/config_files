@@ -1,7 +1,6 @@
 # disable fish greeting message
 set fish_greeting
 # set editor
-set -x EDITOR "nvim"
+set -xg EDITOR "nvim"
 # source utility files
-. ~/.config/fish/functions/aliases.fish
-. ~/.config/fish/functions/export.fish
+. ~/.config/fish/functions/aliases.fish 
