@@ -101,7 +101,7 @@ map <leader>/ <leader>c<space>
 " CTRL-P vim
 map <leader>f <C-p>
 " livedown preview
-map <leader>l :Liv_edownPreview<CR>
+map <leader>p :LivedownToggle<CR>
 " insert after before single characer
 nnoremap ,i i_<Esc>r
 nnoremap ,a a_<Esc>r
