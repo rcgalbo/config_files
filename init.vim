@@ -23,6 +23,7 @@ set shiftwidth=2
 set softtabstop=2
 filetype plugin on
 set autoindent
+set smartindent
 " }}}
 " UI Layout {{{
 set number              " show line numbers
@@ -52,9 +53,6 @@ augroup configgroup
     au FileType py
     \ setlocal foldlevel=0 tabstop=4 softtabstop=4 shiftwidth=4 
     \| setlocal textwidth=79 fileforma=unix expandtab autoindent 
-    au FileType sh,javascript,html,css,r,vim,json,Dockerfile,fish
-    \ setlocal foldlevel=10 tabstop=2 softtabstop=2 shiftwidth=2
-    \| setlocal autoindent smartindent
 augroup END
 " relative line number toggle
 set number relativenumber
@@ -86,7 +84,7 @@ set pastetoggle=<F2>
 " Leader Shortcuts {{{
 let mapleader=","
 noremap <Leader>s :w<CR>
-nnoremap <leader>m :silent make\|redraw!\|cw<CR>
+nnoremap <leader>r :silent make\|redraw!\|cw<CR>
 nnoremap <leader><space> :noh<CR>
 " quick edits
 nnoremap <leader>ev :tabnew $MYVIMRC<CR>
@@ -101,7 +99,7 @@ map <leader>/ <leader>c<space>
 " CTRL-P vim
 map <leader>f <C-p>
 " livedown preview
-map <leader>p :LivedownToggle<CR>
+map <leader>m :LivedownToggle<CR>
 " insert after before single characer
 nnoremap ,i i_<Esc>r
 nnoremap ,a a_<Esc>r
@@ -130,9 +128,6 @@ let g:SimpylFold_fold_docstring=0
 let g:SimpylFold_docstring_preview=1
 " emmet vim
 let g:user_emmet_leader_key='<C-z>'
-" deoplete
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "" Change assignment operator
 let R_assign_map=";"
 " Markdown
@@ -163,6 +158,8 @@ Plug 'vim-airline/vim-airline-themes'
 "file access
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " editing utilities
 Plug 'scrooloose/nerdcommenter'
 Plug 'tmhedberg/SimpylFold'
@@ -171,6 +168,7 @@ Plug 'mattn/emmet-vim'
 Plug 'lfilho/cosco.vim'
 Plug 'prettier/vim-prettier'
 Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
 "markdown
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-markdown'

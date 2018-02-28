@@ -26,7 +26,6 @@ alias st="tmux source ~/.tmux.conf"
 # exports {{{
 set -gx EDITOR "nvim"
 set -gx RSTUDIO_WHICH_R /usr/binset 
-set -gx PATH $PATH ~/.config/fish/nvm-wrapper/
 set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin/
 #}}}
 # vim:foldmethod=marker:foldlevel=0
