@@ -27,5 +27,6 @@ alias st="tmux source ~/.tmux.conf"
 set -gx EDITOR "nvim"
 set -gx RSTUDIO_WHICH_R /usr/binset 
 set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin/
+set -gx PATH $PATH ~/.linuxbrew/bin/
 #}}}
 # vim:foldmethod=marker:foldlevel=0
