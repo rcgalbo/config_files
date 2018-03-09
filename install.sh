@@ -24,13 +24,6 @@ sudo add-apt-repository ppa:daniruiz/flat-remix
 sudo apt-get update
 sudo apt-get install flat-remix-gnome flat-remix
 
-# nvm
-git clone https://github.com/creationix/nvm.git ~/.nvm
-cd ~/.nvm
-git checkout (git describe --abbrev=0 --tags)
-cd ~/.config/fish
-git clone git://github.com/passcod/nvm-fish-wrapper.git nvm-wrapper
-
 # vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -71,7 +64,7 @@ rm -rf grive2
 sudo pip install csvkit
 
 # configure home
-rm -rf Music/ Public/ Videos/ Pictures/ Templates/ examples.desktop
+rm -rf Music/ Public/ Videos/ Templates/ examples.desktop
 mv Documents doc
 mv Downloads dnld
 mv Desktop dsk
