@@ -34,6 +34,9 @@ git clone git://github.com/passcod/nvm-fish-wrapper.git nvm-wrapper
 # vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# conda install
+curl -o ~/miniconda.sh -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 	
 # battery utilities
 # thermald
