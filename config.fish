@@ -2,5 +2,5 @@
 set fish_greeting
 # set editor
 set -xg EDITOR "nvim"
-# source utility files
+# source setup file
 . ~/.config/fish/functions/aliases.fish 

@@ -8,12 +8,11 @@ alias clean="git reset --hard HEAD; and git clean -df"
 alias cvs="rm ~/.local/share/nvim/swap/*" 
 # }}}
 # {{{ tmux aliases
-alias tks="tmux kill-session"
+alias tks="tmux kill-session -t"
 alias tkserv="tmux kill-server"
 alias tls="tmux list-session"
-alias attach="tmux attach"
+alias attach="tmux attach -t"
 alias detach="tmux detach"
-alias tsw="tmux switch"
 # }}}
 # quick-edit {{{
 alias ev="vi ~/.config/nvim/init.vim"
@@ -27,6 +26,8 @@ alias st="tmux source ~/.tmux.conf"
 set -gx EDITOR "nvim"
 set -gx RSTUDIO_WHICH_R /usr/binset 
 set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin/
-set -gx PATH $PATH ~/.linuxbrew/bin/
+set -gx PATH $PATH ~/domino/
+set -gx PATH ~/.miniconda3/bin $PATH
+. ~/.miniconda3/etc/fish/conf.d/conda.fish
 #}}}
 # vim:foldmethod=marker:foldlevel=0

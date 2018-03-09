@@ -1,4 +1,4 @@
-function actvenv --description 'activate virtual env'
+function actvenv -d 'activate virtual env'
 	if test -e $argv
     source $argv/bin/activate.fish
   else

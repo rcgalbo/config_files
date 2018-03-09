@@ -1,4 +1,4 @@
-function bconf --description "backup configuration files to github"
+function bconf -d "backup configuration files to github"
   set current_dir $PWD
   set backup_dir ~/config_files/
   cp ~/.config/nvim/init.vim $backup_dir

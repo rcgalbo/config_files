@@ -28,7 +28,8 @@ set smartindent
 " UI Layout {{{
 set number              " show line numbers
 set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
+" cursor line
+hi CursorLine cterm=NONE ctermbg=white ctermfg=white guibg=colour171 guifg=white
 set wildmenu
 set showmatch           " higlight matching parenthesis
 set fillchars+=vert:┃
@@ -50,9 +51,10 @@ nnoremap <space> za
 augroup configgroup
     autocmd!
     autocmd BufRead,BufNewFile *.md setlocal spell foldlevel=10
-    au FileType py
-    \ setlocal foldlevel=0 tabstop=4 softtabstop=4 shiftwidth=4 
-    \| setlocal textwidth=79 fileforma=unix expandtab autoindent 
+    au BufNewFile,BufRead *.ejs set filetype=html
+    au FileType python 
+    \| setlocal foldlevel=0 tabstop=4 softtabstop=4 shiftwidth=4 
+    \| setlocal textwidth=79 expandtab 
 augroup END
 " relative line number toggle
 set number relativenumber
@@ -128,6 +130,7 @@ let g:SimpylFold_fold_docstring=0
 let g:SimpylFold_docstring_preview=1
 " emmet vim
 let g:user_emmet_leader_key='<C-z>'
+let g:user_emmet_mode='a'
 "" Change assignment operator
 let R_assign_map=";"
 " Markdown
@@ -141,6 +144,10 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
+" goyo
+function! s:goyo_enter()
+  set number
+endfunction
 " Use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version
 " control. It also supports works with .svn, .hg, .bzr.
@@ -158,16 +165,18 @@ Plug 'vim-airline/vim-airline-themes'
 "file access
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'mattn/gist-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " editing utilities
+Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
 Plug 'mattn/emmet-vim'
 Plug 'lfilho/cosco.vim'
 Plug 'prettier/vim-prettier'
-Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 "markdown
 Plug 'shime/vim-livedown'
