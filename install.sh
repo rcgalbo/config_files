@@ -7,6 +7,10 @@ sudo apt-get upgrade
 # apps
 sudo apt-get install git tmux neovim curl gconf2
 
+# add git email
+git config --global user.email "rcglb627@gmail.com"
+git config --global user.name "rgalbo"
+
 # shell
 sudo apt-get install fish
 chsh -s /usr/bin/fish # make fish default
@@ -28,17 +32,11 @@ sudo apt-get install flat-remix-gnome flat-remix
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# conda install
-curl -o ~/miniconda.sh -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-	
-# battery utilities
-# thermald
-sudo apt-get install thermald
-# tlp
-sudo add-apt-repository ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install tlp
+# tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# conda install
+curl https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh | bash
 
 # grive install
 sudo apt-get install git cmake build-essential pkgconf libgcrypt11-dev libyajl-dev libboost-all-dev libcurl4-openssl-dev libexpat1-dev libcppunit-dev binutils-dev
