@@ -23,13 +23,12 @@ set shiftwidth=2
 set softtabstop=2
 filetype plugin on
 set autoindent
-set smartindent
 " }}}
 " UI Layout {{{
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 " cursor line
-hi CursorLine cterm=NONE ctermbg=white ctermfg=white guibg=colour171 guifg=white
+set cursorline
 set wildmenu
 set showmatch           " higlight matching parenthesis
 set fillchars+=vert:┃
@@ -52,9 +51,7 @@ augroup configgroup
     autocmd!
     autocmd BufRead,BufNewFile *.md setlocal spell foldlevel=10
     au BufNewFile,BufRead *.ejs set filetype=html
-    au FileType python 
-    \| setlocal foldlevel=0 tabstop=4 softtabstop=4 shiftwidth=4 
-    \| setlocal textwidth=79 expandtab 
+    au BufNewFile,BufRead *.py setlocal foldlevel=0 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab 
 augroup END
 " relative line number toggle
 set number relativenumber
@@ -103,8 +100,8 @@ map <leader>f <C-p>
 " livedown preview
 map <leader>m :LivedownToggle<CR>
 " insert after before single characer
-nnoremap ,i i_<Esc>r
-nnoremap ,a a_<Esc>r
+map <leader>i i_<Esc>r
+map <leader>a a_<Esc>r
 " bindings for buffergator searching
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
@@ -136,6 +133,7 @@ let R_assign_map=";"
 " Markdown
 let g:markdown_fenced_languages = ['css', 'python', 'r', 'javascript', 'js=javascript', 'json=javascript', 'xml']
 let g:livedown_open = 1 
+let g:livedown_autorun = 0
 " cosco settigns
 autocmd FileType javascript,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
@@ -147,7 +145,18 @@ let g:ctrlp_custom_ignore = {
 " goyo
 function! s:goyo_enter()
   set number
+  set noshowmode
+  set noshowcmd
+  Limelight
 endfunction
+function! s:goyo_leave()
+  set number
+  set noshowmode
+  set noshowcmd
+  Limelight!
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version
 " control. It also supports works with .svn, .hg, .bzr.
@@ -156,35 +165,38 @@ let g:ctrlp_working_path_mode = 'r'
 let g:buffergator_viewport_split_policy = 'R'
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
+" disable hacky vim-Ipython
+let g:ipy_monitor_subchannel = 0
 " }}} 
 " Vim Plug {{{
 call plug#begin('~/.config/nvim/plugged/')
-"airline
+" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"file access
+" file access
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mattn/gist-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 " editing utilities
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
 Plug 'mattn/emmet-vim'
+Plug 'mattn/webapi-vim'
 Plug 'lfilho/cosco.vim'
 Plug 'prettier/vim-prettier'
-Plug 'mattn/webapi-vim'
-"markdown
+" markdown
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-markdown'
-" highlighting - indenting
+Plug 'tpope/vim-repeat'
+" misc
 Plug 'dag/vim-fish'
 Plug 'pangloss/vim-javascript'
 Plug 'jalvesaq/Nvim-R'
+Plug 'bfredl/nvim-ipy'
 " auto complete plugs
 Plug 'metakirby5/codi.vim'
 call plug#end()

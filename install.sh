@@ -11,12 +11,16 @@ sudo apt-get install git tmux neovim curl gconf2
 git config --global user.email "rcglb627@gmail.com"
 git config --global user.name "rgalbo"
 
-# shell
+# configure gnome shell
+sudo apt-get install gnome-tweak-tool chrome-gnome-shell gnome-session
+
+# fish
 sudo apt-get install fish
 chsh -s /usr/bin/fish # make fish default
-
 # install omf
 curl -L https://get.oh-my.fish | fish
+# install fisherman
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 # get spacedark colorscheme
 git clone https://github.com/liuchengxu/space-vim-dark
