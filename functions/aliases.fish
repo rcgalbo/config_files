@@ -27,7 +27,6 @@ set -gx EDITOR "nvim"
 set -gx RSTUDIO_WHICH_R /usr/binset 
 # set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin/
 # set -gx PATH $PATH ~/domino/
-set -gx PATH $PATH /snap/bin
 set -gx PATH ~/.miniconda/bin $PATH
 . ~/.miniconda/etc/fish/conf.d/conda.fish
 #}}}
