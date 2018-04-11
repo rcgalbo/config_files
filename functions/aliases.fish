@@ -1,5 +1,6 @@
 # base aliases {{{
 alias vi="nvim"
+alias git="hub"
 alias reload=". ~/.config/fish/conf.d/omf.fish"
 alias ll="ls -la"
 alias ...="cd ../.."
@@ -25,9 +26,10 @@ alias st="tmux source ~/.tmux.conf"
 # exports {{{
 set -gx EDITOR "nvim"
 set -gx RSTUDIO_WHICH_R /usr/binset 
+set -gx PATH ~/.miniconda/bin $PATH
+set -gx PATH $PATH ~/Applications/google-cloud-sdk/bin
 # set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin/
 # set -gx PATH $PATH ~/domino/
-set -gx PATH ~/.miniconda/bin $PATH
 . ~/.miniconda/etc/fish/conf.d/conda.fish
 #}}}
 # vim:foldmethod=marker:foldlevel=0

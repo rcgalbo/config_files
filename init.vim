@@ -1,7 +1,8 @@
 " slick - vimrc
 " Colors {{{
-set termguicolors
 color space-vim-dark
+set termguicolors
+let base16colorspace=256
 let g:airline_theme='kolor'
 let g:space_vim_dark_background = 237
 hi Comment cterm=italic
@@ -184,6 +185,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/webapi-vim'
 Plug 'lfilho/cosco.vim'
@@ -191,7 +193,6 @@ Plug 'prettier/vim-prettier'
 " markdown
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-repeat'
 " misc
 Plug 'dag/vim-fish'
 Plug 'pangloss/vim-javascript'
