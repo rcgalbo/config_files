@@ -5,7 +5,7 @@ function backup_configs -d "backup configuration files to github"
   cp ~/.tmux.conf $backup_dir
   cp ~/.config/joplin/keymap.json $backup_dir
   cp ~/.config/fish/config.fish $backup_dir  
-  cp ~/.config/fish/functions/*.fish $backup_dir/functions 
+  cp ~/.config/fish/functions/*.fish $backup_dir/functions/ 
   cd $backup_dir
   git add --all
   git status
