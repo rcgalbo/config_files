@@ -3,7 +3,6 @@
 color space-vim-dark
 set termguicolors
 let base16colorspace=256
-let g:airline_theme='kolor'
 let g:space_vim_dark_background = 237
 hi Comment cterm=italic
 " }}}
@@ -171,9 +170,6 @@ let g:ipy_monitor_subchannel = 0
 " }}} 
 " Vim Plug {{{
 call plug#begin('~/.config/nvim/plugged/')
-" airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " file access
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
